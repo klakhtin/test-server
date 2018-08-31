@@ -2,8 +2,8 @@ image: gradle:alpine
 
 build:
   stage: build
-  script: gradlew assemble --no-daemon
+  script: ./gradlew assemble --no-daemon
 
 test:
   stage: test
-  script: gradlew check --no-daemon
+  script: ./gradlew check --no-daemon
