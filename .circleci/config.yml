@@ -22,5 +22,8 @@ jobs:
     # Download and cache dependencies
     - run: gradle dependencies
 
+    # run build
+    - run: gradle build
+
     # run tests!
     - run: gradle test
