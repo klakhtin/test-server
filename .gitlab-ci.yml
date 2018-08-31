@@ -1,9 +1,15 @@
 image: gradle:alpine
 
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+before_script:
+- export GRADLE_USER_HOME=`pwd`/.gradle
+
 build:
   stage: build
-  script: ./gradlew assemble --no-daemon
+  script: gradle --build-cache assemble
 
 test:
   stage: test
-  script: ./gradlew check --no-daemon
+  script: gradle check
